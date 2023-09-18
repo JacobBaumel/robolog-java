@@ -23,7 +23,11 @@ public class SocketTest {
                 if(s.hasNext()) {
                     String line = s.nextLine();
                     synchronized (q) {
-                        for(char c : line.toCharArray()) q.offer(c);
+                        for(char c : line.toCharArray()) {
+                            if(c == '\\') q.offer((char) 29);
+                            else if(c == '|') q.offer((char) 30);
+                            else q.offer(c);
+                        }
                         q.offer('\n');
                     }
                 }
