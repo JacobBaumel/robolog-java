@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class SocketTest {
 
     public static void main(String[] args) throws IOException {
-        ServerSocket server = new ServerSocket(7503);
+        ServerSocket server = new ServerSocket(7502);
         System.out.println("server started");
 
         Queue<Character> q = new LinkedList<>();
